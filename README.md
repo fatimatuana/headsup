@@ -1,4 +1,4 @@
-# headsup
+# pwa-proj
 
 ## Project setup
 ```
