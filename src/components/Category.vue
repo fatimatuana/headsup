@@ -12,8 +12,8 @@
   </v-card> -->
 
   
-    <div class="category-div mx-1 my-0" :style="`background-image: url('/img/categories/${category.pic}.png');`" @click="switchtoG(category.id)" >
-      <p>{{category.name.toUpperCase()}}</p>
+    <div class="category-div mx-1 my-0" :style="`background-image: url('/img/categories/${category.pic}');`" @click="switchtoG(category.id)" >
+      <p class="category--title">{{category.name.toUpperCase()}}</p>
     </div>
 
 
@@ -54,9 +54,15 @@ import Game from '@/components/Game.vue';
   padding: 0px 15px;
   border-radius: 20px;
   // border: 2px solid red;
-  box-shadow: 10px 5px 25px #000000;
+  background-position: center;
+  box-shadow: 0px 0px 25px #000000;
 }
-.category-div p{
-  // color: red !important
+// .category-div p{
+//   // color: red !important
+// }
+.category--title{
+  font-size: 24px;
+  text-shadow: 2px 2px 20px #000000;
+  font-weight: 700;
 }
 </style>

@@ -4,7 +4,7 @@
             <v-img src="/img/heads-up-bg-logo.png"/>
         </div>
         <div class="centered-content  glow">
-                    <button class="start-button glow" @click="goToOverviewPage()">START</button>
+            <button class="start-button glow funny-font" @click="goToOverviewPage()">START</button>
         </div>
     </div>
 </template>
@@ -30,7 +30,7 @@
     // background-color: #4e5b66;
     // background-color: red;
     // background-color: #ffefc2;
-    background-color: #E6B83C;
+    background-color: #E6B83C; //*** */
     position: absolute;
     bottom: 5vh;
     font-size: 28px;
@@ -41,15 +41,8 @@
     // color: #4e5b66;
     // color: #f2e2b6;
     border: 2px solid #f2e2b6;
-
     text-shadow: 0 0 3px #E6B83C, 0 0 5px #4e5b66;
-
 }
 
-.glow{
-    -webkit-box-shadow:0px 0px 16px 10px rgba(230,165,60,0.9);
--moz-box-shadow: 0px 0px 16px 10px rgba(230,165,60,0.9);
-box-shadow: 0px 0px 16px 5px rgba(230,165,60,0.9);
-}
 
 </style>
