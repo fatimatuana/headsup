@@ -22,9 +22,10 @@
 <div  v-if="duringStatus == 'L'" class="lose text-center centercenter fullheight-vh" >
       <v-icon class="iconStyling" size="350" color="white">mdi-close</v-icon>
 </div>
-  
+
 
       </v-card>
+ <button @click="playSound('win.mp3')">Play Sound</button>
 
     </v-dialog>
   </v-row>
@@ -162,6 +163,6 @@ height: 90vh; justify-content:center; align-items:center; display: flex
   transform: rotate(90deg);
 }
 .fullheight-vh{
-    height: 100vh;
+  height: 100vh;
 }
 </style>

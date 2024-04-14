@@ -9,12 +9,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/index',
+    path: '/',
     name: 'LandingPage',
     component: LandingPage
   },
   {
-    path: '/',
+    path: '/overview',
     name: 'Overview',
     component: CategoriesOverview
   },

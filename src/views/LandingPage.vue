@@ -1,10 +1,12 @@
 <template>
     <div>
-        <div>
-            <v-img src="/img/heads-up-bg-logo.png"/>
+        <div class="ff">
+            <!-- <v-img src="/img/heads-up-bg-logo.png" style="height:100vh; width: 100vw;"/> -->
         </div>
-        <div class="centered-content  glow">
-            <button class="start-button glow funny-font" @click="goToOverviewPage()">START</button>
+        <div class="centered-content ">
+            <router-link to="/overview" class="centered-content">
+                <button class="start-button glow funny-font" @click="call()">START</button>
+            </router-link>
         </div>
     </div>
 </template>
@@ -12,8 +14,15 @@
 <script>
     export default {
         methods: {
-            goToOverviewPage() {
-                this.$router.push("/");
+            async call(){
+                if (!window.DeviceOrientationEvent || !window.DeviceOrientationEvent.requestPermission){
+                    return alert("Your current device does not have access to the DeviceOrientation event");
+                }
+                
+                let permission = await window.DeviceOrientationEvent.requestPermission();
+                if (permission !== "granted"){
+                    return alert("You must grant access to the device's sensor for this demo");
+                }
             }
         },
         
@@ -44,5 +53,13 @@
     text-shadow: 0 0 3px #E6B83C, 0 0 5px #4e5b66;
 }
 
-
+.ff{
+    background-image: url("/img/heads-up-bg-logo.png");
+      background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
 </style>

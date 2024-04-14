@@ -13,13 +13,18 @@
     </v-alert>
 
         <v-container>
-            <button @click="call()">call</button>
         <v-row>
         <Category v-for="item in categories" :key="item.id" :category="item" >
             {{ item }}
         </Category>            
     </v-row>
         </v-container>
+
+        <div style="display:flex;justify-content:center;" class="mt-3"> 
+            <span>
+            <v-img src="/img/heads-up-title-ic.png" style="width:40vw"></v-img>
+            </span> 
+        </div>
     </v-container>
 </template>
 
@@ -61,17 +66,6 @@ import Appbar from '@/components/Appbar.vue';
                 this.checkConnection();
                 }, 1000);
             },
-        async call(){
-              if (!window.DeviceOrientationEvent || !window.DeviceOrientationEvent.requestPermission){
-                return alert("Your current device does not have access to the DeviceOrientation event");
-            }
-            
-            let permission = await window.DeviceOrientationEvent.requestPermission();
-            if (permission !== "granted"){
-                return alert("You must grant access to the device's sensor for this demo");
-            }
-
-        }
         },
         async mounted () {
             await this.getData();
