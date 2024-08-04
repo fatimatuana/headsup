@@ -18,11 +18,17 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
+
 /* test */
 #app{
   /* font-family: "Varela Round";  */
    /* font-family: "Margarine", sans-serif; */
-     font-family: "Inter", sans-serif;
+
+     /* font-family: "Inter", sans-serif; ***************************/
+  font-family: "Gabarito", sans-serif;
+    font-weight: 800;
+
 
    /* font-family: "Margarine", sans-serif; */
   /* background-color: #292929; */

@@ -63,6 +63,9 @@ import Game from '@/components/Game.vue';
 .category--title{
   font-size: 24px;
   text-shadow: 2px 2px 20px #000000;
-  font-weight: 700;
+  font-weight: 900;
+  letter-spacing: 4px;
+  width: 100%;
+  text-align: center;
 }
 </style>

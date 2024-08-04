@@ -1,23 +1,20 @@
 <template>
     <v-container>
-          <Appbar :text="'heads up'"> </Appbar>
- <v-alert 
- :value="offline"
-      type="error"
-    >
-      <v-row align="center">
-        <v-col class="grow">
-         Oh noo! <br>Keine Internetverbindung :(
-        </v-col>
-      </v-row>
-    </v-alert>
+        <Appbar :text="'heads up'"> </Appbar>
+        <v-alert :value="offline" type="error">
+            <v-row align="center">
+                <v-col class="grow">
+                Oh noo! <br>Keine Internetverbindung :(
+                </v-col>
+            </v-row>
+        </v-alert>
 
         <v-container>
-        <v-row>
-        <Category v-for="item in categories" :key="item.id" :category="item" >
-            {{ item }}
-        </Category>            
-    </v-row>
+            <v-row>
+                <Category v-for="item in categories" :key="item.id" :category="item" >
+                    {{ item }}
+                </Category>            
+            </v-row>
         </v-container>
 
         <div style="display:flex;justify-content:center;" class="mt-3"> 
@@ -44,19 +41,17 @@ import Appbar from '@/components/Appbar.vue';
             Appbar,
         },
         async created () {
-                        this.checkConnection();
-
-           await this.getData();
+            this.checkConnection();
+            await this.getData();
             history.pushState({}, '', "/results");
             history.pushState({}, '', "/");
         },
         methods: {
-
-          async getData(){
-                        let res = await axios.get("/categories");
-                        // let res = await axios.get("http://localhost:3000/categories");
-                        this.categories = await res.data;
-          },
+            async getData(){
+                // let res = await axios.get("/categories");
+                let res = await axios.get("http://localhost:3000/categories");
+                this.categories = await res.data;
+            },
             checkConnection() {
                 setTimeout(() => {
                 if (!navigator.onLine) {
@@ -71,10 +66,6 @@ import Appbar from '@/components/Appbar.vue';
             await this.getData();
         },
 
-
-
-
-        
     }
 </script>
 
