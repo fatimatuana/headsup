@@ -48,8 +48,8 @@ import Appbar from '@/components/Appbar.vue';
         },
         methods: {
             async getData(){
-                // let res = await axios.get("/categories");
-                let res = await axios.get("http://localhost:3000/categories");
+                let res = await axios.get("/categories");
+                // let res = await axios.get("http://localhost:3000/categories");
                 this.categories = await res.data;
             },
             checkConnection() {
@@ -70,9 +70,4 @@ import Appbar from '@/components/Appbar.vue';
 </script>
 
 <style>
-.fullheight-p{
-    /* height: 100%; */
-    /* height: 100vh; */
-}
-
 </style>

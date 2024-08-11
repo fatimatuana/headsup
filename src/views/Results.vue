@@ -16,7 +16,8 @@
 <v-container>
      <span class="col-prim">{{winsWords}}</span>  
      <!-- <span class="col-prim">{{winsWords}}</span>   -->
-         <p  class="col-sec">{{losesWords}}</p></v-container>
+         <p  class="col-sec">{{losesWords}}</p>
+    </v-container>
          <!-- <p  class="col-sec">{{losesWords}}</p></v-container> -->
 
         <v-card>
@@ -33,7 +34,8 @@
 
             <div id="actions-div">
 
-              <button v-if="!offline" @click="dialog = !dialog" class="button "  style="background-color: rgb(5, 5, 79);font-size: 1.5em;width: -webkit-fill-available;margin-bottom:10px;"> 
+              <button v-if="!offline" @click="dialog = !dialog" class="button "  style="font-size: 1.5em;width: -webkit-fill-available;margin-bottom:10px;"> 
+              <!-- <button v-if="!offline" @click="dialog = !dialog" class="button "  style="background-color: rgb(5, 5, 79);font-size: 1.5em;width: -webkit-fill-available;margin-bottom:10px;">  -->
               <!-- <button v-if="!offline" @click="dialog = !dialog" class="button "  style="background-color: #FFC700; color: black;font-size: 1.5em;width:100%;margin-bottom:10px;">  -->
               <!-- <button v-if="!offline" @click="dialog = !dialog" class="button "  style="background-color: #E6B83C;"> #FFD73D -->
                 <p class="bold funny-font" style="margin-bottom:0px;">TRY AGAIN</p>
@@ -42,7 +44,8 @@
               </button>
 
               <router-link to="/overview" >
-                <button   @click="getGameData()" class="button"  style="background-color: #BFBFBF;width: -webkit-fill-available;">
+                <button   @click="getGameData()" class="button"  style="width: -webkit-fill-available;">
+                <!-- <button   @click="getGameData()" class="button"  style="background-color: #BFBFBF;width: -webkit-fill-available;"> -->
                 <!-- <v-btn  to="/" @click="getGameData()" class="mt-2 mb-2 ml-2 bg-light button" large> -->
                   <p class="bold funny-font" style="margin-bottom:0px;"><v-icon style="font-size: 1.5em;">mdi-sync </v-icon></p>              
                 </button>
@@ -128,19 +131,18 @@ import Game from '@/components/Game.vue';
   color: #444444;
 }
 .button{
-  border-radius: 40px;
-  /* border: 8px solid black; */
-  /* border: 15px solid yellow; */
+  border-radius: 30px;
   margin:0 5px;
   height: 12vh !important;
-  /* height: 60px !important; */
-  box-shadow: 0px 0px 10px #aeaeae;
-  /* box-shadow: 0px 0px 10px black; */
+      box-shadow: 0px 0px 25px #000000;
   color: #ededed;
+  backdrop-filter: blur(20px);
+}
+.button p {
+  letter-spacing: 2px;
 }
 #actions-div{
- /* display:grid;  
- grid-template-columns: 1fr ;  */
+
  grid-gap: 15px;
  padding: 0px 10px;
  position: absolute;
@@ -148,12 +150,9 @@ import Game from '@/components/Game.vue';
  width: 100%;
 }
 #results--container{
-      /* background-color: rgb(89, 89, 255); */
       background-color: rgb(5 5 79);
-      /* background-color: rgb(29 29 150); */
-
-      /* rgb(31 31 150) */
+      background-color: #252525;
     border-radius: 0px 00px 50px 50px;
-    box-shadow: 0px 0px 10px #aeaeae;
+    box-shadow: 0px 0px 25px #000000;
 }
 </style>

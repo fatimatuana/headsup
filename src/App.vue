@@ -54,8 +54,8 @@ box-shadow: 0px 0px 16px 5px rgba(230,165,60,0.9);
   font-weight: 900;
 }
 
-.funny-font{
+/* .funny-font{
   font-family: "Margarine", sans-serif;
-}
+} */
 
 </style>

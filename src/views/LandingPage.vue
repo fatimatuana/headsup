@@ -5,7 +5,7 @@
         </div>
         <div class="centered-content ">
             <router-link to="/overview" class="centered-content">
-                <button class="start-button glow funny-font" @click="call()">START</button>
+                <button class="start-button funny-font" @click="call()">START</button> 
             </router-link>
         </div>
     </div>
@@ -36,21 +36,21 @@
     justify-content: center;
 }
 .start-button{
-    // background-color: #4e5b66;
-    // background-color: red;
     // background-color: #ffefc2;
-    background-color: #E6B83C; //*** */
     position: absolute;
     bottom: 5vh;
-    font-size: 28px;
+    font-size: 2rem;
     padding: 8px 48px;
     border-radius: 20px;
     // color: #E6B83C;
     color: #ffffff;
     // color: #4e5b66;
     // color: #f2e2b6;
-    border: 2px solid #f2e2b6;
-    text-shadow: 0 0 3px #E6B83C, 0 0 5px #4e5b66;
+    // border: 2px solid #f2e2b6;
+    // text-shadow: 0 0 3px #E6B83C, 0 0 5px #4e5b66;  #######
+    // background-color: #ffebb6;
+    text-shadow: 0px 0px 50px #E6B83C;
+    letter-spacing: 2px;
 }
 
 .ff{

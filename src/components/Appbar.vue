@@ -19,10 +19,10 @@
       </template>
 
       <v-card class="nav-dialog">
-        <v-card-title class="headline content-centered">Imprint</v-card-title>
+        <v-card-title class="headline content-centered">IMPRINT</v-card-title>
         <v-card-text class="content-centered mt-5">Tuana Sirinyurt<br>&#169;	2024 </v-card-text>
         <v-card-actions  class="content-centered">
-          <v-btn color="white darken-1" text @click="dialog = false;">Close</v-btn>
+          <v-btn color="white darken-1" text @click="dialog = false;">CLOSE</v-btn>
         </v-card-actions>
       </v-card>
 
@@ -36,7 +36,7 @@
       </template>
 
       <v-card class="nav-dialog">
-        <v-card-title class="headline content-centered">Settings</v-card-title>
+        <v-card-title class="headline content-centered">SETTINGS</v-card-title>
         <v-card-text class="content-centered mt-5">
            <v-switch
               v-model="switch1"
@@ -46,7 +46,7 @@
           ></v-switch>
       </v-card-text>
           <v-card-actions class="content-centered">
-            <v-btn color="white darken-1" text @click="chgItem()">Close</v-btn>
+            <v-btn color="white darken-1" text @click="chgItem()">CLOSE</v-btn>
           </v-card-actions>
       </v-card>
     </v-dialog>
@@ -90,5 +90,10 @@
     display: flex;
     text-align: center;
     justify-content: center;
+  }
+  .v-card__title{
+    font-family: "Gabarito", sans-serif;
+    letter-spacing: 2px !important;
+    font-weight: 900;
   }
 </style>
