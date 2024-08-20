@@ -23,6 +23,48 @@
                 if (permission !== "granted"){
                     return alert("You must grant access to the device's sensor for this demo");
                 }
+
+
+
+                // let notificationPermision = await Notification.requestPermission();
+                // if (Notification?.permission === "granted") {
+                //     const notification = new Notification("NOTIFICATION - granted v1");
+                //     console.log("notification", notification);
+                // }
+                // if (notificationPermision !== "granted"){
+                //     return alert("No grant for notifications");
+                // }
+                // else{
+                //     return alert("GRANTED for notifications");
+                // }
+
+                if (!("Notification" in window)) {
+                    console.log("This browser does not support notifications.");
+                    return;
+                }
+                Notification.requestPermission().then((permission) => {
+                    // set the button to shown or hidden, depending on what the user answers
+                    // notificationBtn.style.display = permission === "granted" ? "none" : "block";
+
+                    if (permission === "granted") {
+                        const notification = new Notification("NOTIFICATION - granted v1");
+                        console.log("notification", notification);
+                        const img = "/img/heads-up-bg-logo.png";
+                        const text = `HEY! push.`;
+                        const notificationnn = new Notification("To do list", { body: text, icon: img });
+                        const n = new Notification(`Hi from headsup.`, {
+                            tag: "soManyNotification",
+                        });
+                        console.log("testing: ",n, notificationnn);
+                    }
+                    if (permission !== "granted"){
+                        return alert("No grant for notifications");
+                    }
+                    else{
+                        return alert("GRANTED for notifications");
+                    }
+
+                });
             }
         },
         
