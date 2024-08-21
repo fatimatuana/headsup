@@ -56,11 +56,13 @@
                             tag: "soManyNotification",
                         });
                         console.log("testing: ",n, notificationnn);
+                        return alert("SETTT granted for notifications");
                     }
                     if (permission !== "granted"){
                         return alert("No grant for notifications");
                     }
                     else{
+                        new Notification('Hey, stand up!');
                         return alert("GRANTED for notifications");
                     }
 
