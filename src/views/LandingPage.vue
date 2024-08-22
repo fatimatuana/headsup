@@ -38,35 +38,36 @@
                 //     return alert("GRANTED for notifications");
                 // }
 
-                if (!("Notification" in window)) {
-                    console.log("This browser does not support notifications.");
-                    return;
-                }
-                Notification.requestPermission().then((permission) => {
-                    // set the button to shown or hidden, depending on what the user answers
-                    // notificationBtn.style.display = permission === "granted" ? "none" : "block";
+                // if (!("Notification" in window)) {
+                //     console.log("This browser does not support notifications.");
+                //     return;
+                // }
+                // Notification.requestPermission().then((permission) => {
+                //     // set the button to shown or hidden, depending on what the user answers
+                //     // notificationBtn.style.display = permission === "granted" ? "none" : "block";
 
-                    if (permission === "granted") {
-                        const notification = new Notification("NOTIFICATION - granted v1");
-                        console.log("notification", notification);
-                        const img = "/img/heads-up-bg-logo.png";
-                        const text = `HEY! push.`;
-                        const notificationnn = new Notification("To do list", { body: text, icon: img });
-                        const n = new Notification(`Hi from headsup.`, {
-                            tag: "soManyNotification",
-                        });
-                        console.log("testing: ",n, notificationnn);
-                        return alert("SETTT granted for notifications");
-                    }
-                    if (permission !== "granted"){
-                        return alert("No grant for notifications");
-                    }
-                    else{
-                        new Notification('Hey, stand up!');
-                        return alert("GRANTED for notifications");
-                    }
+                //     if (permission === "granted") {
+                //         const notification = new Notification("NOTIFICATION - granted v1");
+                //         console.log("notification", notification);
+                //         const img = "/img/heads-up-bg-logo.png";
+                //         const text = `HEY! push.`;
+                //         const notificationnn = new Notification("To do list", { body: text, icon: img });
+                //         const n = new Notification(`Hi from headsup.`, {
+                //             tag: "soManyNotification",
+                //         });
+                //         new Notification(`Hi from headsup.`);
+                //         console.log("testing: ",n, notificationnn);
+                //         return alert("SETTT granted for notifications");
+                //     }
+                //     if (permission !== "granted"){
+                //         return alert("No grant for notifications");
+                //     }
+                //     else{
+                //         new Notification('Hey, stand up!');
+                //         return alert("GRANTED for notifications");
+                //     }
 
-                });
+                // });
             }
         },
         

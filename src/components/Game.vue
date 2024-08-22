@@ -73,7 +73,8 @@ import Progress from '@/components/Progress.vue';
                 if(gamma <= 60 &&  gamma >= 0 ){
                   this.duringStatus = 'W';
                   if(this.before != 'W'){
-                    this.playSound("win.mp3");
+                    this.playSound("win");
+                    // this.playSound("win.mp3");
                                           this.game.winsWords.push(this.activeWord);
                   this.countWinsOff++;
                   }
@@ -82,7 +83,8 @@ import Progress from '@/components/Progress.vue';
                 else if(gamma >= -60 &&  gamma <= 0  ){
                       this.duringStatus = 'L';
                     if(this.before != 'L'){
-                    this.playSound("lose.mp3");
+                    this.playSound("lose");
+                    // this.playSound("lose.mp3");
                     this.game.losesWords.push(this.activeWord);
                   }
                       this.before = 'L';
@@ -95,6 +97,12 @@ import Progress from '@/components/Progress.vue';
                   this.duringStatus ='G';
                 }
 },   
+
+async preloadAudio(file) {
+  const audio = new Audio(require(`../../public/sounds/${file}`));
+  await audio.load();
+  return audio;
+},
 
 
 async goToResult(){
@@ -117,12 +125,23 @@ startGame(){
         window.addEventListener('deviceorientation',  this.handleOrientation, true);
   },
 
-  async playSound(file){
-      let audio = new Audio(require(`../../public/sounds/${file}`));
-      audio.play();
+  // async playSound(file){
+  //     let audio = new Audio(require(`../../public/sounds/${file}`));
+  //     audio.play();
+  // }
+
+  async playSound(soundType) {
+  if (soundType === 'win') {
+    this.winSound.play();
+  } else if (soundType === 'lose') {
+    this.loseSound.play();
   }
+}
+
 },
     async created () {
+      this.winSound = await this.preloadAudio('win.mp3');
+      this.loseSound = await this.preloadAudio('lose.mp3');
       this.game.losesWords = [];
       this.game.winsWords = [];
       this.dialog = true;
