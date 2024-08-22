@@ -123,10 +123,12 @@ handleOrientation(event) {
     if (this.duringStatus !== 'G') {
       this.newWord();
     }
-    this.before = this.duringStatus;  // preserve previous state
     this.duringStatus = 'G';
+    this.before = this.duringStatus;  // preserve previous state
+
   }
 },
+
 async preloadAudio(file) {
   const audio = new Audio(require(`../../public/sounds/${file}`));
   await audio.load();
