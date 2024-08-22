@@ -68,36 +68,65 @@ import Progress from '@/components/Progress.vue';
       newWord(){
           this.activeWord = this.wordsArray[this.getRandomInt(this.wordsArray.length)];
       },
-      handleOrientation(event) {
-                let gamma    = event.gamma;
-                if(gamma <= 60 &&  gamma >= 0 ){
-                  this.duringStatus = 'W';
-                  if(this.before != 'W'){
-                    this.playSound("win");
-                    // this.playSound("win.mp3");
-                                          this.game.winsWords.push(this.activeWord);
-                  this.countWinsOff++;
-                  }
-                  this.before = 'W';
-                }
-                else if(gamma >= -60 &&  gamma <= 0  ){
-                      this.duringStatus = 'L';
-                    if(this.before != 'L'){
-                    this.playSound("lose");
-                    // this.playSound("lose.mp3");
-                    this.game.losesWords.push(this.activeWord);
-                  }
-                      this.before = 'L';
-                }
-                else{
-                  if(this.duringStatus != 'G'){
-                    this.newWord();
-                  }
-                  this.before = this.duringStatus; //zwischenspeichern
-                  this.duringStatus ='G';
-                }
-},   
+//       handleOrientation(event) {
+//                 let gamma    = event.gamma;
+//                 if(gamma <= 60 &&  gamma >= 0 ){
+//                   this.duringStatus = 'W';
+//                   if(this.before != 'W'){
+//                     this.playSound("win");
+//                     // this.playSound("win.mp3");
+//                                           this.game.winsWords.push(this.activeWord);
+//                   this.countWinsOff++;
+//                   }
+//                   this.before = 'W';
+//                 }
+//                 else if(gamma >= -60 &&  gamma <= 0  ){
+//                       this.duringStatus = 'L';
+//                     if(this.before != 'L'){
+//                     this.playSound("lose");
+//                     // this.playSound("lose.mp3");
+//                     this.game.losesWords.push(this.activeWord);
+//                   }
+//                       this.before = 'L';
+//                 }
+//                 else{
+//                   if(this.duringStatus != 'G'){
+//                     this.newWord();
+//                   }
+//                   this.before = this.duringStatus; //zwischenspeichern
+//                   this.duringStatus ='G';
+//                 }
+// },   
+handleOrientation(event) {
+  let gamma = event.gamma;
 
+  if (gamma <= 60 && gamma >= 0) {
+    this.duringStatus = 'W';
+
+    if (this.before !== 'W') {
+      this.playSound("win");
+      this.game.winsWords.push(this.activeWord);
+      this.countWinsOff++;
+    }
+    this.before = 'W';
+
+  } else if (gamma >= -60 && gamma <= 0) {
+    this.duringStatus = 'L';
+
+    if (this.before !== 'L') {
+      this.playSound("lose");
+      this.game.losesWords.push(this.activeWord);
+    }
+    this.before = 'L';
+
+  } else {
+    if (this.duringStatus !== 'G') {
+      this.newWord();
+    }
+    this.before = this.duringStatus;  // preserve previous state
+    this.duringStatus = 'G';
+  }
+},
 async preloadAudio(file) {
   const audio = new Audio(require(`../../public/sounds/${file}`));
   await audio.load();
